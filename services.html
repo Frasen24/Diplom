@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css">
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script src="script.js"></script>
+<meta charset="UTF-8">
+<title>Послуги - Realtor Services Center</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  
+  <div class="bg-effects">
+  <div class="bg-gradient"></div>
+  <div class="bg-mesh bg-mesh-1"></div>
+  <div class="bg-mesh bg-mesh-2"></div>
+  <div class="bg-mesh bg-mesh-3"></div>
+  <div class="particles" id="particles"></div>
+</div>
+<div class="bouncing-blobs-container">
+
+  <div class="bouncing-blobs-glass"></div>
+
+  <div class="bouncing-blobs">
+
+    <div class="bouncing-blob bouncing-blob--blue"></div>
+    <div class="bouncing-blob bouncing-blob--blue"></div>
+    <div class="bouncing-blob bouncing-blob--blue"></div>
+
+    <div class="bouncing-blob bouncing-blob--white"></div>
+
+    <div class="bouncing-blob bouncing-blob--purple"></div>
+    <div class="bouncing-blob bouncing-blob--purple"></div>
+
+    <div class="bouncing-blob bouncing-blob--pink"></div>
+
+  </div>
+
+</div>
+
+
+
+<header>
+
+<div class="logo">Realtor Services Center від Нікітюка Артема</div>
+
+<nav class="tabs">
+  <div class="selector"></div>
+  <a href="index.html" class="tab-link">Додому</a>
+  <a href="services.html" class="tab-link active">Послуги</a>
+  <a href="about.html" class="tab-link">Про нас</a>
+  <a href="contact.html" class="tab-link">Контакти</a>
+</nav>
+
+</header>
+
+
+
+<section class="hero">
+
+<h1>Знайдіть своє ідеальне житло в Києві</h1>
+
+<p>
+Ми допомагаємо клієнтам віком від 18 до 60 років знаходити нерухомість,
+яка відповідає їхнім потребам, бюджету та способу життя.
+</p>
+
+<button onclick="location.href='contact.html'">
+Зателефонуйте, щоб почати
+</button>
+
+</section>
+
+<section class="ultra-dashboard">
+
+<h2>Розумна панель керування нерухомістю Києва</h2>
+
+<div class="dash-grid">
+
+<div class="dash-card">
+<h3>Середні ціни</h3>
+<p>Київ: $1850 / м²</p>
+<p>Печерськ: $3200 / м²</p>
+<p>Голосіївський: $2100 / м²</p>
+<p>Оболонь: $1900 / м²</p>
+</div>
+
+<div class="dash-card">
+<h3>Карта безпеки обстрилів</h3>
+<p>🟢 Голосіївський</p>
+<p>🟢 Печерський</p>
+<p>🟡 Оболонь</p>
+<p>🔴 Дарницький</p>
+</div>
+
+<div class="dash-card">
+<h3>Режим сайту</h3>
+<button onclick="toggleTheme()">🌙 / ☀️ Змінити тему</button>
+</div>
+
+</div>
+
+</section>
+
+<section class="services-section">
+
+  <section class="smart-tools">
+
+<h2>Розумні інструменти для покупця</h2>
+
+<div class="tool-box">
+
+<!-- 1 Оцінка будинку -->
+
+<div class="tool-card">
+
+<h3>Оцінка ринкової вартості</h3>
+
+<input type="number" id="housePrice" placeholder="Ціна будинку $">
+<input type="number" id="avgPrice" placeholder="Середня ціна району $">
+
+<button onclick="checkPrice()">Перевірити</button>
+
+<p id="priceResult"></p>
+
+</div>
+
+
+<!-- 2 Безпечний район -->
+
+<div class="tool-card">
+
+<h3>Фільтр безпеки району</h3>
+
+<select id="district">
+
+<option value="9">Печерський</option>
+<option value="8">Голосіївський</option>
+<option value="7">Дарницький</option>
+<option value="6">Оболонь</option>
+<option value="5">Троєщина</option>
+
+</select>
+
+<button onclick="checkSafety()">Оцінити</button>
+
+<p id="safeResult"></p>
+
+</div>
+
+
+<!-- 3 Іпотека -->
+
+<div class="tool-card">
+
+<h3>Калькулятор Є-Оселя</h3>
+
+<input type="number" id="income" placeholder="Дохід сім'ї / міс">
+<input type="number" id="family" placeholder="Кількість людей">
+<input type="number" id="firstPay" placeholder="Перший внесок $">
+
+<button onclick="checkMortgage()">Розрахувати</button>
+
+<p id="mortgageResult"></p>
+
+</div>
+
+</div>
+
+</section>
+
+<h2>Наші послуги</h2>
+
+<p class="subtitle">
+Ми підбираємо житло, яке відповідає вашому стилю життя,
+бюджету та потребам на динамічному ринку нерухомості Києва.
+</p>
+
+
+<div class="grid">
+
+
+<div class="card">
+
+<h3>Вибір нерухомості</h3>
+
+<p>
+Ми допомагаємо знайти квартиру або будинок,
+який відповідає вашим вимогам, бюджету та району проживання.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h3>Управління нерухомістю</h3>
+
+<p>
+Ми беремо на себе збір орендної плати,
+обслуговування житла та комунікацію з орендарями.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h3>Консалтинг у сфері нерухомості</h3>
+
+<p>
+Експертні консультації щодо ринку нерухомості,
+інвестиційних можливостей та аналізу цін.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h3>Інвестиційний аналіз</h3>
+
+<p>
+Ми оцінюємо об'єкти нерухомості та допомагаємо
+інвесторам створювати прибуткові портфелі.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h3>Підтримка договорів</h3>
+
+<p>
+Ми готуємо та перевіряємо договори оренди,
+щоб захистити інтереси всіх сторін.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h3>Перевірка орендарів</h3>
+
+<p>
+Ми перевіряємо документи, доходи та рекомендації,
+щоб знайти надійних орендарів.
+</p>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+<section class="pricing">
+
+<h2>Наші тарифи</h2>
+
+<div class="grid">
+
+
+<div class="price-card">
+
+<h3>Property Selection</h3>
+
+<p class="price">від $200</p>
+
+<p>Пошук житла відповідно до ваших потреб.</p>
+
+<ul>
+
+<li>Персональний підбір нерухомості</li>
+<li>Аналіз районів</li>
+<li>Організація переглядів</li>
+<li>Підтримка переговорів</li>
+
+</ul>
+
+<button>Замовити</button>
+
+</div>
+
+
+<div class="price-card">
+
+<h3>Property Management</h3>
+
+<p class="price">від $150 / місяць</p>
+
+<p>Повне управління орендною нерухомістю.</p>
+
+<ul>
+
+<li>Пошук орендарів</li>
+<li>Збір орендної плати</li>
+<li>Обслуговування нерухомості</li>
+<li>Фінансові звіти</li>
+
+</ul>
+
+<button>Замовити</button>
+
+</div>
+
+
+<div class="price-card">
+
+<h3>Real Estate Consulting</h3>
+
+<p class="price">від $80 / година</p>
+
+<p>Консультації щодо ринку нерухомості.</p>
+
+<ul>
+
+<li>Аналіз ринку</li>
+<li>Інвестиційна стратегія</li>
+<li>Оцінка вартості</li>
+<li>Рекомендації по портфелю</li>
+
+</ul>
+
+<button>Замовити</button>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+<section class="reviews">
+
+<h2>Відгуки клієнтів</h2>
+
+<div class="reviews-grid">
+
+
+<div class="review-card">
+
+<p>
+Ми знайшли квартиру у потрібному районі
+та у межах нашого бюджету.
+Команда працює дуже професійно.
+</p>
+
+<b>Дмитро Волков</b>
+
+</div>
+
+
+<div class="review-card">
+
+<p>
+Як покупець вперше,
+я отримала повну підтримку на кожному етапі.
+</p>
+
+<b>Олена Коваленко</b>
+
+</div>
+
+
+<div class="review-card">
+
+<p>
+Дуже хороше розуміння ринку
+та чесні рекомендації.
+</p>
+
+<b>Андрій Шевченко</b>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+<section class="faq">
+
+<h2>Питання про наші послуги</h2>
+
+
+<div class="faq-item">
+
+<h3>Як ви допомагаєте знайти нерухомість?</h3>
+
+<p>
+Ми аналізуємо ваші потреби, бюджет та район
+і підбираємо найкращі варіанти нерухомості.
+</p>
+
+</div>
+
+
+<div class="faq-item">
+
+<h3>З яким віком клієнтів ви працюєте?</h3>
+
+<p>
+Ми працюємо з клієнтами віком від 18 до 60 років.
+</p>
+
+</div>
+
+
+<div class="faq-item">
+
+<h3>Скільки часу займає пошук житла?</h3>
+
+<p>
+Зазвичай від кількох днів до кількох тижнів
+залежно від вимог клієнта.
+</p>
+
+</div>
+
+
+</section>
+
+
+
+<footer>
+<section class="smart-kyiv-map">
+  <h2>Smart Kyiv Map — Жива карта районів</h2>
+
+  <div class="map-controls">
+    <button onclick="showLayer('prices')">💰 Ціни</button>
+    <button onclick="showLayer('safety')">🛡 Безпека</button>
+    <button onclick="showLayer('schools')">🏫 Школи</button>
+    <button onclick="showLayer('metro')">🚇 Метро</button>
+    <button onclick="showLayer('alerts')">🚨 Тривоги</button>
+  </div>
+
+  <div id="kyivMap"></div>
+
+  <p id="mapInfo"></p>
+</section>
+<p>© 2026 Realtor Services Center</p>
+
+</footer>
+
+</body>
+
+</html>
+

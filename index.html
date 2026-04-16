@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<meta charset="UTF-8">
+<title>Realtor Services Center</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div class="bg-effects">
+  <div class="bg-gradient"></div>
+  <div class="bg-mesh bg-mesh-1"></div>
+  <div class="bg-mesh bg-mesh-2"></div>
+  <div class="bg-mesh bg-mesh-3"></div>
+  <div class="particles" id="particles"></div>
+</div>
+    
+    <script src="script.js"></script>
+<div class="bouncing-blobs-container">
+
+  <div class="bouncing-blobs-glass"></div>
+
+  <div class="bouncing-blobs">
+
+    <div class="bouncing-blob bouncing-blob--blue"></div>
+    <div class="bouncing-blob bouncing-blob--blue"></div>
+    <div class="bouncing-blob bouncing-blob--blue"></div>
+
+    <div class="bouncing-blob bouncing-blob--white"></div>
+
+    <div class="bouncing-blob bouncing-blob--purple"></div>
+    <div class="bouncing-blob bouncing-blob--purple"></div>
+
+    <div class="bouncing-blob bouncing-blob--pink"></div>
+
+  </div>
+
+</div>
+
+
+
+<div class="login-modal" id="loginModal">
+
+<div class="login-container">
+
+<div class="login-tabs">
+
+<button class="tab active" onclick="showLogin()">Login</button>
+<button class="tab" onclick="showRegister()">Register</button>
+
+</div>
+
+<div class="form-area">
+
+<form id="loginForm">
+
+<h2>Вхід</h2>
+
+<input type="text" placeholder="Логін">
+
+<input type="password" placeholder="Пароль">
+
+<button class="submit-btn">Увійти</button>
+
+</form>
+
+<form id="registerForm">
+
+<h2>Реєстрація</h2>
+
+<input type="text" placeholder="Ім'я">
+
+<input type="email" placeholder="Email">
+
+<input type="password" placeholder="Пароль">
+
+<button class="submit-btn">Створити акаунт</button>
+
+</form>
+
+</div>
+
+<button class="close-btn" onclick="closeLogin()">✕</button>
+
+</div>
+
+</div>
+
+
+
+<header>
+<button class="login-btn" onclick="openLogin()">
+<span class="material-icons">account_circle</span>
+</button>
+<div class="logo">Realtor Services Center від Нікітюка Артема</div>
+
+<nav class="tabs">
+  <div class="selector"></div>
+  <a href="index.html" class="tab-link active">Додому</a>
+  <a href="services.html" class="tab-link">Послуги</a>
+  <a href="about.html" class="tab-link">Про нас</a>
+  <a href="contact.html" class="tab-link">Контакти</a>
+</nav>
+
+</header>
+
+
+
+<section class="hero">
+
+<div class="hero-text">
+
+<h1>Знайдіть свій дім у Києві, Україна.</h1>
+
+<p>
+Ми підбираємо нерухомість відповідно до вашого стилю життя,
+бюджету та району.
+</p>
+
+<button class="animated-btn" onclick="location.href='services.html'">
+Подивитися послуги
+</button>
+
+</div>
+
+
+<div class="hero-image">
+
+<img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c">
+
+</div>
+
+</section>
+
+<section class="unicorn">
+
+<h2>Платформа нерухомості зі штучним інтелектом</h2>
+
+<div class="uni-grid">
+
+<div class="uni-card">
+
+<h3>AI Ріелтор</h3>
+
+<input type="number" id="money" placeholder="Ваш бюджет $">
+
+<select id="familyType">
+<option>1 людина</option>
+<option>2 людини</option>
+<option>4 людини</option>
+<option>Велика сім'я</option>
+</select>
+
+<button onclick="unicornAI()">Підібрати</button>
+
+<p id="uniResult"></p>
+
+</div>
+
+
+
+<div class="uni-card">
+
+<h3>Інвестор Mode</h3>
+
+<input type="number" id="buyPrice" placeholder="Ціна покупки">
+
+<input type="number" id="rentMonth" placeholder="Оренда / міс">
+
+<button onclick="roiCalc()">Розрахувати ROI</button>
+
+<p id="roiResult"></p>
+
+</div>
+
+
+
+<div class="uni-card">
+
+<h3>Ринок 2026</h3>
+
+<p>📈 Київ +12%</p>
+<p>📈 Печерськ +18%</p>
+<p>📈 Голосіївський +9%</p>
+<p>📈 Оболонь +7%</p>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="startup-listings">
+
+<h2>Популярні об'єкти Києва</h2>
+
+<div class="listing-grid">
+
+<div class="listing-card">
+
+<img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c">
+
+<h3>ЖК Pechersk Premium</h3>
+
+<p>$145,000 • 72 м²</p>
+
+<p>Печерський район</p>
+
+<button onclick="saveHome('Pechersk Premium')">❤️ Зберегти</button>
+
+</div>
+
+
+
+<div class="listing-card">
+
+<img src="https://images.unsplash.com/photo-1568605114967-8130f3a36994">
+
+<h3>Modern Obolon Flat</h3>
+
+<p>$92,000 • 58 м²</p>
+
+<p>Оболонь</p>
+
+<button onclick="saveHome('Modern Obolon Flat')">❤️ Зберегти</button>
+
+</div>
+
+
+
+<div class="listing-card">
+
+<img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be">
+
+<h3>Family House Kyiv</h3>
+
+<p>$178,000 • 110 м²</p>
+
+<p>Голосіївський</p>
+
+<button onclick="saveHome('Family House Kyiv')">❤️ Зберегти</button>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="ai-chat">
+
+<h2>AI Realtor Assistant</h2>
+
+<input type="number" id="aiBudget" placeholder="Ваш бюджет $">
+
+<button onclick="aiHelp()">Знайти варіанти</button>
+
+<p id="aiResult"></p>
+
+</section>
+
+<section class="cards">
+
+<h2>Знайдіть свій ідеальний дім у Києві</h2>
+
+<div class="grid animated-cards">
+
+<div class="card" style="--clr:#009688">
+
+<div class="img-box">
+<img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2">
+</div>
+
+<div class="content">
+
+<h2>Вибір нерухомості</h2>
+
+<p>
+Ми допоможемо знайти квартиру або будинок відповідно до ваших вимог.
+</p>
+
+<a href="services.html">Детальніше</a>
+
+</div>
+
+</div>
+
+
+
+<div class="card" style="--clr:#FF3E7F">
+
+<div class="img-box">
+<img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40">
+</div>
+
+<div class="content">
+
+<h2>Аналіз ринку</h2>
+
+<p>
+Актуальні дані та аналітика ринку нерухомості.
+</p>
+
+<a href="services.html">Детальніше</a>
+
+</div>
+
+</div>
+
+
+
+<div class="card" style="--clr:#03A9F4">
+
+<div class="img-box">
+<img src="https://images.unsplash.com/photo-1556745757-8d76bdb6984b">
+</div>
+
+<div class="content">
+
+<h2>Підтримка переговорів</h2>
+
+<p>
+Допомагаємо отримати найкращу ціну.
+</p>
+
+<a href="services.html">Детальніше</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<footer>
+
+<p>© 2026 Realtor Services Center</p>
+
+</footer>
+
+</body>
+</html>
+
+<section class="home-info">
+
+<h2>Знайдіть свій ідеальний дім у Києві</h2>
+
+<p class="subtitle">
+Ми допомагаємо клієнтам знайти нерухомість, яка відповідає їхньому стилю життя,
+бюджету та району проживання.
+</p>
+
+<div class="info-grid">
+
+<div class="info-card">
+
+<h3>Знайдено справжні будинки. Справжні щасливі сім'ї.</h3>
+
+<p>
+Ми допомогли сотням клієнтів знайти ідеальне житло у Києві. 
+Наша команда працює з перевіреними об'єктами нерухомості та 
+забезпечує комфортний процес купівлі або оренди.
+</p>
+
+</div>
+
+
+<div class="info-card">
+
+<h3>Доведені результати у сфері нерухомості Києва</h3>
+
+<p>
+Наш досвід на ринку нерухомості дозволяє нам знаходити найкращі 
+варіанти квартир, будинків та інвестиційних об'єктів. 
+Ми аналізуємо ринок та допомагаємо клієнтам приймати правильні рішення.
+</p>
+
+</div>
+
+
+<div class="info-card">
+
+<h3>Давайте підберемо вам потрібну нерухомість у Києві</h3>
+
+<p>
+Незалежно від того, чи шукаєте ви квартиру для проживання, 
+чи інвестиційну нерухомість — ми допоможемо підібрати 
+найкращі варіанти відповідно до ваших вимог.
+</p>
+
+</div>
+
+
+<div class="info-card">
+
+<h3>Завітайте до нашого київського офісу</h3>
+
+<p>
+Наші спеціалісти готові допомогти вам особисто. 
+Відвідайте наш офіс у Києві, щоб отримати консультацію 
+та знайти свій ідеальний дім.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="reviews">
+
+<h2>Відгуки наших клієнтів</h2>
+
+<div class="reviews-grid">
+
+<div class="review-card">
+
+<p>
+"Дуже професійна команда. Нам допомогли знайти квартиру
+у центрі Києва буквально за кілька днів."
+</p>
+
+<h4>— Володимир Великий</h4>
+
+</div>
+
+
+<div class="review-card">
+
+<p>
+"Дякую за допомогу у купівлі першої квартири.
+Усе пройшло швидко та без зайвих проблем."
+</p>
+
+<h4>— Володимир Зеленський</h4>
+
+</div>
+
+
+<div class="review-card">
+
+<p>
+"Дуже хороший сервіс. Отримали детальний аналіз
+ринку та допомогу у переговорах."
+</p>
+
+<h4>— Альоша Попович</h4>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="smart-map">
+
+<h2>Smart Kyiv Map</h2>
+<p>Натисни на район Києва</p>
+
+<div class="map-grid">
+
+<div class="district" onclick="showDistrict('pechersk')">
+Печерський
+</div>
+
+<div class="district" onclick="showDistrict('holosiiv')">
+Голосіївський
+</div>
+
+<div class="district" onclick="showDistrict('obolon')">
+Оболонь
+</div>
+
+<div class="district" onclick="showDistrict('darnytsia')">
+Дарницький
+</div>
+
+</div>
+
+<div class="district-info" id="districtInfo">
+
+Оберіть район для перегляду інформації
+
+</div>
+
+</section>
