@@ -1,1 +1,1 @@
-# Diplom
+# Diplom (Nikituk Artem)
