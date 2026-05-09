@@ -572,4 +572,3 @@ function initParticles(){
 
 window.addEventListener("load", initParticles);
 window.addEventListener("resize", initParticles);
-

@@ -8,6 +8,62 @@
 <meta charset="UTF-8">
 <title>Послуги - Realtor Services Center</title>
 <link rel="stylesheet" href="style.css">
+
+<style>
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.9);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  }
+
+  .dash-grid {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .dash-card {
+    min-width: 280px;
+    max-width: 340px;
+    width: 100%;
+    text-align: center;
+  }
+
+  .map-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 20px 0;
+  }
+
+  .map-controls button,
+  .price-card button,
+  .hero button,
+  .tool-card button {
+    display: block;
+    margin: 0 auto;
+  }
+
+  .tool-box,
+  .grid,
+  .reviews-grid {
+    justify-content: center;
+  }
+
+  .price-card,
+  .tool-card,
+  .card,
+  .review-card {
+    text-align: center;
+  }
+</style>
 </head>
 
 <body>
@@ -75,32 +131,27 @@
 
 <section class="ultra-dashboard">
 
-<h2>Розумна панель керування нерухомістю Києва</h2>
+  <h2>Розумна панель керування нерухомістю Києва</h2>
 
-<div class="dash-grid">
+  <div class="dash-grid">
 
-<div class="dash-card">
-<h3>Середні ціни</h3>
-<p>Київ: $1850 / м²</p>
-<p>Печерськ: $3200 / м²</p>
-<p>Голосіївський: $2100 / м²</p>
-<p>Оболонь: $1900 / м²</p>
-</div>
+    <div class="dash-card">
+      <h3>Середні ціни</h3>
+      <p>Київ: $1850 / м²</p>
+      <p>Печерськ: $3200 / м²</p>
+      <p>Голосіївський: $2100 / м²</p>
+      <p>Оболонь: $1900 / м²</p>
+    </div>
 
-<div class="dash-card">
-<h3>Карта безпеки обстрилів</h3>
-<p>🟢 Голосіївський</p>
-<p>🟢 Печерський</p>
-<p>🟡 Оболонь</p>
-<p>🔴 Дарницький</p>
-</div>
+    <div class="dash-card">
+      <h3>Карта безпеки обстрилів</h3>
+      <p>🟢 Голосіївський</p>
+      <p>🟢 Печерський</p>
+      <p>🟡 Оболонь</p>
+      <p>🔴 Дарницький</p>
+    </div>
 
-<div class="dash-card">
-<h3>Режим сайту</h3>
-<button onclick="toggleTheme()">🌙 / ☀️ Змінити тему</button>
-</div>
-
-</div>
+  </div>
 
 </section>
 
@@ -456,4 +507,3 @@
 </body>
 
 </html>
-
